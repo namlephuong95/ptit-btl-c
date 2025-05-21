@@ -8,7 +8,7 @@ Hệ thống đăng nhập và đăng ký tài khoản và quản lý ví điể
 
 | Họ và tên | MSSV | Công việc được giao |
 |-----------|------|---------------------|
-| Le Phuong Nam | K24DTCN170| - Tao github repo, tao project, phan chia cong việc trong team|
+| Le Phuong Nam | K24DTCN215| - Tao github repo, tao project, phan chia cong việc trong team|
 | Nguyen Duc Anh | K24DTCN170| - Làm chức năng đăng nhập, đăng ký|
 | Trần Thanh Lâm | K24DTCN207 | - View information cua user menu va admin menu|
 | Nguyễn Văn Thắng | K24DTCN230 | - View balance and tranfer points|
