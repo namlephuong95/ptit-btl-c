@@ -307,13 +307,13 @@ public:
         }
         return false;
     }
-//    
-//    // Show all user info
-//    void showAllUserInfo() {
-//    	for(int i = 0; i < userCount; i++) {
-//    		users[i]->printUserInfo();
-//		}
-//	}
+    
+    // Show all user info
+    void showAllUserInfo() {
+    	for(int i = 0; i < userCount; i++) {
+    		users[i]->printUserInfo();
+		}
+	}
 };
 
 // Show main menu
@@ -469,8 +469,8 @@ void handleAdminMenu(SystemManager& system, const string& username, User* loginU
                 break;
                 
             case 1: { // View All Account Information
-//                cout << "\n=== ALL ACCOUNT INFORMATION ===\n";
-//                system.showAllUserInfo();
+                cout << "\n=== ALL ACCOUNT INFORMATION ===\n";
+                system.showAllUserInfo();
                 break;
             }
             case 2: { 
