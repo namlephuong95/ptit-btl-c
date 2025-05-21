@@ -69,14 +69,14 @@ public:
     }
 
     // Wallet operations
-//    bool transferPoints(double amount) {
-//        if (amount <= 0) return false;
-//        if (balance >= amount) {
-//            balance -= amount;
-//            return true;
-//        }
-//        return false;
-//    }
+    bool transferPoints(double amount) {
+        if (amount <= 0) return false;
+        if (balance >= amount) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
 
     void addPoints(double amount) {
         if (amount > 0) {
@@ -242,52 +242,52 @@ public:
 	}
 
     // Transfer points
-//    bool transferPoints(const string& fromUsername, const string& toUsername,
-//                       double amount) {
-//        if (amount <= 0) {
-//            cout << "Error: Amount must be positive\n";
-//            return false;
-//        }
-//
-//        User* fromUser = NULL;
-//        User* toUser = NULL;
-//        
-//       
-//        for(int i = 0; i < userCount; i++) {
-//            if (users[i]->getUsername() == fromUsername) {
-//                fromUser = users[i];
-//            }
-//            if (users[i]->getUsername() == toUsername) {
-//                toUser = users[i];
-//            }
-//        }
-//        
-//        if (!fromUser || !toUser) {
-//            cout << "Error: User not found\n";
-//            return false;
-//        }
-//        
-//        if (fromUser->transferPoints(amount)) {
-//            toUser->addPoints(amount);
-//            if (!saveToFile()) {
-//                cout << "Error: Failed to save transaction\n";
-//                return false;
-//            }
-//            return true;
-//        }
-//        cout << "Error: Insufficient balance\n";
-//        return false;
-//    }
+    bool transferPoints(const string& fromUsername, const string& toUsername,
+                       double amount) {
+        if (amount <= 0) {
+            cout << "Error: Amount must be positive\n";
+            return false;
+        }
+
+        User* fromUser = NULL;
+        User* toUser = NULL;
+        
+       
+        for(int i = 0; i < userCount; i++) {
+            if (users[i]->getUsername() == fromUsername) {
+                fromUser = users[i];
+            }
+            if (users[i]->getUsername() == toUsername) {
+                toUser = users[i];
+            }
+        }
+        
+        if (!fromUser || !toUser) {
+            cout << "Error: User not found\n";
+            return false;
+        }
+        
+        if (fromUser->transferPoints(amount)) {
+            toUser->addPoints(amount);
+            if (!saveToFile()) {
+                cout << "Error: Failed to save transaction\n";
+                return false;
+            }
+            return true;
+        }
+        cout << "Error: Insufficient balance\n";
+        return false;
+    }
 
     // Get user balance
-//    double getUserBalance(const string& username) const {
-//        for(int i = 0; i < userCount; i++) {
-//            if (users[i]->getUsername() == username) {
-//                return users[i]->getBalance();
-//            }
-//        }
-//        return -1.0;
-//    }
+    double getUserBalance(const string& username) const {
+        for(int i = 0; i < userCount; i++) {
+            if (users[i]->getUsername() == username) {
+                return users[i]->getBalance();
+            }
+        }
+        return -1.0;
+    }
 
     // Change password
     bool changePassword(const string& username, const string& oldPassword,
@@ -393,7 +393,7 @@ void handleUserMenu(SystemManager& system, const string& username, User* loginUs
                 break;
                 
             case 1: { // View Account Information
-//                double balance = system.getUserBalance(username);
+                double balance = system.getUserBalance(username);
                 cout << "\n=== ACCOUNT INFORMATION ===\n";
                 loginUser->printUserInfo();
                 break;
@@ -416,29 +416,29 @@ void handleUserMenu(SystemManager& system, const string& username, User* loginUs
             }
             
             case 3: { // View Wallet Balance
-//                double balance = system.getUserBalance(username);
-//                cout << "\n=== WALLET BALANCE ===\n";
-//                cout << "Current balance: " << balance << " points\n";
+                double balance = system.getUserBalance(username);
+                cout << "\n=== WALLET BALANCE ===\n";
+                cout << "Current balance: " << balance << " points\n";
                 break;
             }
             
             case 4: { // Transfer Points
-//                string toUsername;
-//                double amount;
-//                
-//                cout << "\n=== TRANSFER POINTS ===\n";
-//                cout << "Enter recipient username: ";
-//                cin >> toUsername;
-//                cout << "Enter amount to transfer: ";
-//                cin >> amount;
-//                
-//                if (system.transferPoints(username, toUsername, amount)) {
-//                    cout << "Transfer successful!\n";
-//                    double newBalance = system.getUserBalance(username);
-//                    cout << "New balance: " << newBalance << " points\n";
-//                } else {
-//                    cout << "Transfer failed. Please check the amount and recipient.\n";
-//                }
+                string toUsername;
+                double amount;
+                
+                cout << "\n=== TRANSFER POINTS ===\n";
+                cout << "Enter recipient username: ";
+                cin >> toUsername;
+                cout << "Enter amount to transfer: ";
+                cin >> amount;
+                
+                if (system.transferPoints(username, toUsername, amount)) {
+                    cout << "Transfer successful!\n";
+                    double newBalance = system.getUserBalance(username);
+                    cout << "New balance: " << newBalance << " points\n";
+                } else {
+                    cout << "Transfer failed. Please check the amount and recipient.\n";
+                }
                 break;
             }
             
@@ -474,9 +474,9 @@ void handleAdminMenu(SystemManager& system, const string& username, User* loginU
                 break;
             }
             case 2: { 
-//                double balance = system.getUserBalance(username);
-//                cout << "\n=== REGISTER NEW ACCOUNT ===\n";
-//                handleRegistration(system);
+                double balance = system.getUserBalance(username);
+                cout << "\n=== REGISTER NEW ACCOUNT ===\n";
+                handleRegistration(system);
                 
                 break;
             }
